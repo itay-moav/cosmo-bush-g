@@ -1,0 +1,39 @@
+{
+    "name": "director-moav/cosmo-bush-g",
+    "description": "A PHP validation and transformation library with a functional interface. \"my age field name\" => [required(),trim()....]",
+    "authors": [
+        {
+            "name": "Itay Moav",
+            "email": "itay.malimovka@gmail.com"
+        }
+    ],
+    "type": "library",
+    "license": "Apache License 2.0",
+    
+    "scripts": {
+        "analyze": "phpstan analyse src"
+    },
+    
+
+    "autoload": {
+        "psr-4": {
+            "DirectorMoav\\CosmoBushG\\": "src/"
+        },
+        "files": [
+            "src/Actions/Validators.php",
+            "src/Actions/Transformers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DirectorMoav\\CosmoBushG\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+         "php": "^8.3"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.12"
+    }
+}
