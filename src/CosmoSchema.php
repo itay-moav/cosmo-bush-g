@@ -1,4 +1,6 @@
-<?php namespace DirectorMoav\CosmoBushG;
+<?php
+declare(strict_types=1);
+namespace DirectorMoav\CosmoBushG;
 
 /**
  * @param array $schema
@@ -23,18 +25,20 @@
 class CosmoSchema{
     
    /**
-    * @param array<string,array<string,array<callable>>> $schema
-    * @param array<string,array<string,array<callable>>> $schema_level_actions
+    * @param array<string,callable[]> $schema
+    * @param callable[] $schema_level_actions
     * @param int $schema_level_actions_at_position defaults to 0
     * @return CosmoSchema
     */
-    static public function init_cosmo_bush_g(array $schema,array $schema_level_actions=[],int $schema_level_actions_at_position=0):CosmoSchema{
-        return new static($schema,$schema_level_actions,$schema_level_actions_at_position);
+    static public function init_cosmo_bush_g(   array $schema,
+                                                array $schema_level_actions=[],
+                                                int $schema_level_actions_at_position=0):CosmoSchema{
+        return new CosmoSchema($schema,$schema_level_actions,$schema_level_actions_at_position);
     }
 
    /**
-    * @param array<string,array<string,array<callable>>> $schema
-    * @param array<string,array<string,array<callable>>> $schema_level_actions
+    * @param array<string,callable[]> $schema
+    * @param callable[] $schema_level_actions
     * @param int $schema_level_actions_at_position defaults to 0
     */
     public function __construct(
